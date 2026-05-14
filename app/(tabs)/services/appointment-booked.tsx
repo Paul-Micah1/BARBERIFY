@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppButton } from '@/components/ui';
 import { appTheme } from '@/constants/app-theme';
 import {
-  formatSelectionDuration,
   formatSelectionPrice,
   getSelectionTitle,
   useBarberify,
@@ -52,7 +51,7 @@ export default function AppointmentBookedScreen() {
   }
 
   const serviceTitle = getSelectionTitle(latest.selection);
-  const priceLine = `${formatSelectionPrice(latest.selection)} - ${formatSelectionDuration(latest.selection)}`;
+  const priceLine = formatSelectionPrice(latest.selection);
 
   return (
     <View style={[styles.screen, { paddingTop: insets.top }]}>

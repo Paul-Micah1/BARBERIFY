@@ -7,7 +7,6 @@ import { BookAServiceCard } from '@/components/booking/BookAServiceCard';
 import { BookingFlowHeader } from '@/components/booking/BookingFlowHeader';
 import { appTheme } from '@/constants/app-theme';
 import {
-  formatSelectionDuration,
   formatSelectionPrice,
   getSelectionTitle,
   useBarberify,
@@ -34,7 +33,7 @@ export default function BookingSummaryScreen() {
 
   const { selection, barber, date, timeSlot } = booking;
   const serviceTitle = getSelectionTitle(selection);
-  const priceLine = `${formatSelectionPrice(selection)} - ${formatSelectionDuration(selection)}`;
+  const priceLine = formatSelectionPrice(selection);
 
   const showConfirmDialog = (title: string, message: string, onYes: () => void) => {
     if (typeof window !== 'undefined' && typeof window.confirm === 'function') {
